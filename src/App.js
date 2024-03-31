@@ -14,6 +14,26 @@ import "./App.css";
 function App() {
   const [user, setUser] = useState(null); // Initialize user as null
 
+  //page refresh
+  useEffect(() => {
+    const jwtToken = localStorage.getItem("jwtToken");
+    if (jwtToken) {
+      try {
+        const decodedToken = jwtDecode(jwtToken);
+        const user = {
+          id: decodedToken.uuid,
+          userName: decodedToken.sub,
+          //the last transaction state of a user, to display message on transfer complete.
+          lastTransactionResult: false,
+        };
+        setUser(user);
+      } catch (error) {
+        console.error("Error decoding token:", error);
+        // Handle error (e.g., redirect to login)
+      }
+    }
+  }, []);
+
   const data = { user, setUser };
   return (
     <Router>
