@@ -9,6 +9,7 @@ import Transfer from "./pages/TransferMoney";
 import AddAccount from "./pages/AddAccount";
 import AccountDetails from "./pages/AccountDetails";
 import TransferCompleted from "./pages/TransferCompleted";
+import { jwtDecode } from "jwt-decode";
 import "./App.css";
 
 function App() {
