@@ -29,10 +29,11 @@ A step by step series of examples that tell you how to get a development environ
 git clone https://github.com/cansinbayir/reactBankingApp.git
 
 2. Install NPM packages
+   
 cd reactBankingApp
 npm install
 
-3. Start the development server
+4. Start the development server
 npm start
 
 ## Usage
